@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2016 9:16:02 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="org.questionBank.data.Question" table="question" schema="questionbank" catalog="questionbank">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <set name="answers" table="answer" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="question_id" />
+            </key>
+            <one-to-many class="org.questionBank.data.Answer" />
+        </set>
+        <property name="chapter" type="java.lang.String">
+            <column name="chapter" length="7" />
+        </property>
+        <many-to-one name="course" class="org.questionBank.data.Course" fetch="select">
+            <column name="course_id" />
+        </many-to-one>
+        <property name="question" type="java.lang.String">
+            <column name="question" length="256" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" 
+			xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+			xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<!-- <persistence-unit name="questionBank" transaction-type="RESOURCE_LOCAL"> -->
+	<persistence-unit name="questionBank" transaction-type="JTA">
+		<!-- <provider>org.hibernate.ejb.HibernatePersistence</provider> -->
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		<class>org.questionBank.data.Answer</class>
+		<class>org.questionBank.data.Question</class>
+		<class>org.questionBank.data.Person</class>
+		<class>org.questionBank.data.Course</class>
+		<class>org.questionBank.data.Department</class>
+		<!-- <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider> -->
+		
+		<properties>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/questionbank" />
+            <property name="hibernate.connection.username" value="qbank"/>
+            <property name="hibernate.connection.password" value="qbank12345"/>
+            <property name="show_sql" value="true" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+           <!--  <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/questionbank"/>
+            <property name="javax.persistence.jdbc.user" value="qbank"/>
+            <property name="javax.persistence.jdbc.password" value="qbank12345"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/> -->
+            <property name="hibernate.ejb.cfgfile" value="org/questionBank/hibernate/hibernate.cfg.xml"/>
+            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/> -->
+		</properties>
+	</persistence-unit>
+</persistence>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+
+	<table-filter match-name="ANSWER" match-schema="SYSTEM">
+	</table-filter>
+	<table-filter match-name="COURSE" match-schema="SYSTEM">
+	</table-filter>
+	<table-filter match-name="PERSON" match-schema="SYSTEM">
+	</table-filter>
+	<table-filter match-name="QUESTION" match-schema="SYSTEM">
+	</table-filter>
+	<table-filter match-name="TEACHES" match-schema="SYSTEM">
+	</table-filter>
+</hibernate-reverse-engineering>

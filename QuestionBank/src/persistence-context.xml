@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+	<persistence-unit name="pu1" transaction-type="JTA">
+    	<provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+		<class>org.questionBank.data.Answer</class>
+		<class>org.questionBank.data.Question</class>
+		<class>org.questionBank.data.Person</class>
+		<class>org.questionBank.data.Course</class>
+		<class>org.questionBank.data.Department</class>
+    	<properties>
+            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/questionbank" />
+            <property name="hibernate.connection.username" value="qbank"/>
+            <property name="hibernate.connection.password" value="qbank12345"/>
+            <property name="show_sql" value="true" />
+            <property name="dialect" value="org.hibernate.dialect.MySQLDialect" />
+    	</properties>
+	</persistence-unit>
+</persistence>

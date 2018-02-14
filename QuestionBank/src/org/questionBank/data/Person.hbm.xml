@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2016 9:16:02 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="org.questionBank.data.Person" table="person" schema="questionbank" catalog="questionbank">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="admin" type="boolean">
+            <column name="admin" not-null="true" />
+        </property>
+        <set name="courses" table="teaches" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="person_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="org.questionBank.data.Course">
+                <column name="course_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <property name="firstName" type="java.lang.String">
+            <column name="first_name" length="50" />
+        </property>
+        <property name="lastName" type="java.lang.String">
+            <column name="last_name" length="50" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="password" length="20" />
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="user_name" length="20" />
+        </property>
+    </class>
+</hibernate-mapping>

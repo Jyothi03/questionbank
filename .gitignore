@@ -1,0 +1,16 @@
+QuestionBank/build/
+QuestionBank/dist/
+QuestionBank/.classpath
+QBServer/build/
+QBServer/dist/
+QBServer/.classpath
+RemoteSystemsTempFiles/
+.recommenders/
+**/.DS_Store
+QuestionBank/applog.txt
+/.settings/
+/.classpath
+.metadata/
+QuestionBank/tmp/
+QBServer/qbServer.war
+/bin/

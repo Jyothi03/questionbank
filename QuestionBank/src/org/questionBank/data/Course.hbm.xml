@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 28, 2016 9:16:02 PM by Hibernate Tools 5.2.0.Beta1 -->
+<hibernate-mapping>
+    <class name="org.questionBank.data.Course" table="course" schema="questionbank" catalog="questionbank">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity"></generator>
+        </id>
+        <property name="courseName" type="java.lang.String">
+            <column name="course_name" length="64" />
+        </property>
+        <property name="courseNumber" type="java.lang.String">
+            <column name="course_number" length="12" />
+        </property>
+        <property name="credit" type="java.lang.Integer">
+            <column name="credit" />
+        </property>
+        <many-to-one name="department" class="org.questionBank.data.Department" fetch="select">
+            <column name="department_id" />
+        </many-to-one>
+        <set name="persons" table="teaches" inverse="false" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" not-null="true" />
+            </key>
+            <many-to-many entity-name="org.questionBank.data.Person">
+                <column name="person_id" not-null="true" />
+            </many-to-many>
+        </set>
+        <set name="questions" table="question" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="course_id" />
+            </key>
+            <one-to-many class="org.questionBank.data.Question" />
+        </set>
+    </class>
+</hibernate-mapping>
