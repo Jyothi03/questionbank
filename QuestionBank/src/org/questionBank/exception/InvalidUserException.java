@@ -1,4 +1,4 @@
-package org.questionBank.exception;
+package org.questionBank.exception; //exception
 
 import java.util.ArrayList;
 import java.util.List;
